@@ -63,7 +63,7 @@ class StandardAbsoluteDeviation(anomaly.base.AnomalyDetector):
         self.sub_stat = sub_stat
 
         if self.sub_stat == "mean":
-            self.subtracted_statistic_estimator = stats.Mean()
+            self.subtracted_statistic_estimator: stats.base.Univariate = stats.Mean()
         elif self.sub_stat == "median":
             self.subtracted_statistic_estimator = stats.Quantile(q=0.5)
         else:
